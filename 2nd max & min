@@ -1,0 +1,22 @@
+x=[44,59,0,0,0,0,21,11,13,4]
+start=6
+size=6
+step=0
+largest = x[0]
+lowest = x[0]
+largest2 = None
+lowest2 = None
+index_low=0
+index_high=0
+while step!=size:
+    t=(start+step)%len(x)
+    if x[t] > largest and x[t]%2==0:
+        largest2 = largest
+        largest = x[t]
+        index_high = (start+1+step)%len(x)
+    if x[t] < lowest and x[t]%2!=0:
+        lowest2 = lowest
+        lowest = x[t]
+        index_low = (start+step)%len(x)
+    step+=1
+
